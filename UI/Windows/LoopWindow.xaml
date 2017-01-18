@@ -1,0 +1,27 @@
+﻿<Window x:Class="iRobotGUI.LoopWindow"
+        xmlns:Controls="clr-namespace:iRobotGUI.Controls" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" 
+        Title="Loop" Height="550" Width="450" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <Grid >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Controls:InstructionPanel Grid.Row="0" Grid.Column="0" AddNewInstruction="InstructionPanel_AddNewInstruction"/>
+
+		<Image Grid.Column="1" HorizontalAlignment="Left" Margin="5,85,0,0" VerticalAlignment="Top" Width="16" Height="16" Source="/iRobotGUI;component/pic/false.png"/>
+		<TextBlock Text="has not been detected, do:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="26,85,0,0"/>
+
+		<Controls:SensorSelector x:Name="sensorSelector" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" Height="80" />
+		<Controls:ProgramList x:Name="programListLoopBody" Grid.Row="0" Grid.Column="1" Margin="5,106,5,5" />
+        
+
+    </Grid>
+</Window>

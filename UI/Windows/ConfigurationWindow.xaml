@@ -1,0 +1,27 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:p="clr-namespace:iRobotGUI.Properties" 
+		xmlns:iRobot="clr-namespace:iRobotGUI" 
+        x:Class="iRobotGUI.ConfigurationWindow" 
+        Title="Configuration" Height="250" Width="420" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+	<Grid>
+		<Label Content="COM Port" HorizontalAlignment="Left" Margin="30,37,0,0" VerticalAlignment="Top"/>
+
+		<!-- Com port selector for Microcontroller -->
+		<iRobot:ComPortSelector x:Name="comMC" Margin="98,37,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="279" Height="26"/>
+
+
+		<Button x:Name="buttonOk" Content="OK" HorizontalAlignment="Left" Margin="98,183,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="buttonOk_Click"/>
+		<Button Content="Cancel" HorizontalAlignment="Left" Margin="216,183,0,0" VerticalAlignment="Top" Width="75" IsCancel="True"/>
+		<GroupBox Header="Firmware Version" Margin="35,106,0,0" VerticalAlignment="Top"  Width="342" Height="52" HorizontalAlignment="Left">
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+				<RadioButton x:Name="radio0" Content="stk500" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+				<RadioButton x:Name="radio1" Content="stk500v1" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Top" IsChecked="True"/>
+				<RadioButton x:Name="radio2" Content="stk500v2" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Top"/>
+			</StackPanel>
+		</GroupBox>
+
+		
+	</Grid>
+</Window>

@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="iRobotGUI.Controls.InstructionPanel"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 mc:Ignorable="d" Width="205" Height="408"
+			 RenderOptions.BitmapScalingMode="HighQuality" >
+	<Grid>
+		<Grid.Resources>
+			<!-- Label style -->
+			<Style TargetType="Label">
+				<Setter Property="HorizontalAlignment" Value="Left" />
+				<Setter Property="VerticalAlignment" Value="Top" />
+			</Style>
+
+			<!-- Images' border style -->
+			<Style TargetType="Border">
+				<Setter Property="HorizontalAlignment" Value="Left" />
+				<Setter Property="VerticalAlignment" Value="Top" />
+				<Setter Property="BorderThickness" Value="1" />
+				<Setter Property="Width" Value="46" />
+				<Setter Property="Height" Value="46" />
+				<Style.Triggers>
+					<Trigger Property="IsMouseOver" Value="True">
+						<Setter Property="BorderBrush" Value="#FF149FD9"/>
+						<Setter Property="Background" Value="#FFC7E6F6"/>
+					</Trigger>
+				</Style.Triggers>
+			</Style>
+
+			<!-- Image style -->
+			<Style TargetType="Image">
+				<Setter Property="Stretch" Value="Fill" />
+				<Setter Property="ToolTipService.ShowDuration" Value="100000" />
+				<EventSetter Event="MouseMove" Handler="Image_MouseMove" />
+				<EventSetter Event="MouseDown" Handler="Image_MouseDown" />
+			</Style>
+		</Grid.Resources>
+
+		<Label Content="Navigation"    Margin="30,10,0,0"  />
+		<Label Content="LED and Sound" Margin="30,110,0,0" />
+		<Label Content="Logic"         Margin="30,210,0,0" />
+		<Label Content="Other"         Margin="30,310,0,0" />
+
+		<Border Margin="30,40,0,0" >
+			<Image Source="/iRobotGUI;component/pic/move.png" Tag="MOVE" ToolTip="Move" />
+		</Border>
+		<Border Margin="80,40,0,0" >
+			<Image Source="/iRobotGUI;component/pic/rotate.png" Tag="ROTATE" ToolTip="Rotate" />
+		</Border>
+		<Border Margin="130,40,0,0" >
+			<Image Source="/iRobotGUI;component/pic/drive.png" Tag="DRIVE" ToolTip="Drive" />
+		</Border>
+		<Border Margin="30,140,0,0" >
+			<Image Source="/iRobotGUI;component/pic/led.png" Tag="LED" ToolTip="Turn on/off the LED" />
+		</Border>
+		<Border Margin="80,140,0,0" >
+			<Image Source="/iRobotGUI;component/pic/song.png" Tag="SONG" ToolTip="Define a song" />
+		</Border>
+		<Border Margin="30,240,0,0"  >
+			<Image Source="/iRobotGUI;component/pic/if.png" Tag="IF" ToolTip="If" />
+		</Border>
+		<Border Margin="80,240,0,0" >
+			<Image Source="/iRobotGUI;component/pic/loop.png" Tag="LOOP" ToolTip="Loop" />
+		</Border>
+		<Border Margin="30,340,0,0" >
+			<Image Source="/iRobotGUI;component/pic/demo.png" Tag="DEMO" ToolTip="Play a demo" />
+		</Border>
+		<Border Margin="80,340,0,0" >
+			<Image Source="/iRobotGUI;component/pic/delay.png" Tag="DELAY" ToolTip="Delay" />
+		</Border>
+	</Grid>
+</UserControl>
